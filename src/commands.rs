@@ -91,7 +91,7 @@ pub struct ListArgs {
     name_style: NameStyle,
 
     /// In the output, how many spaces for padding between chords
-    #[clap(short, long="padding", default_value_t=4)]
+    #[clap(short, long, default_value_t=4)]
     padding: u8,
 }
 
