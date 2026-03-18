@@ -6,6 +6,7 @@ use once_cell::sync::Lazy;
 use std::collections::HashMap;
 
 pub static ALL_CHORDS: &'static [Chord] = &[
+    // ultimate-guitar.com/lessons/chords/guide_to_chord_formation.html
     // NOTE: major is omitted such that A ≡ A major by default
     Chord::new(&["A"], "x02220", &["A"], None, None),
     Chord::new(&["A#"], "x13331", &["A♯"], None, Some(BARRE_FRET1)),
@@ -31,6 +32,7 @@ pub static ALL_CHORDS: &'static [Chord] = &[
     Chord::new(&["A/E"], "002220", &["A over E"], None, None),
     Chord::new(&["Am/C"], "x32210", &["A minor over C"], None, None),
     Chord::new(&["Am/G"], "302210", &["A minor over G"], None, None),
+    Chord::new(&["Am/F#"], "2x2210", &["A minor over F♯"], None, None),
     Chord::new(&["B"], "xx4442", &["B"], None, None),
     Chord::new(&["B+]"], "xx3221", &["B augmented"], None, Some(BARRE_FRET3)),
     Chord::new(&["Bmaj7"], "22130x", &["B raised 7ᵗʰ"], None, None),
@@ -64,6 +66,13 @@ pub static ALL_CHORDS: &'static [Chord] = &[
     Chord::new(&["C/B"], "x22010", &["C over B"], None, None),
     Chord::new(&["C/E"], "032010", &["C over E"], None, None),
     Chord::new(&["C/G"], "332010", &["C over G"], None, None),
+    Chord {
+        short_names: &["Cadd2", "Cadd9"],
+        pattern: "x32033",
+        names: &["C added 2ⁿᵈ", "C added 9ᵗʰ"],
+        capo: None,
+        barre: None,
+    },
     Chord::new(&["D"], "xx0232", &["D"], None, None),
     Chord::new(&["D#"], "x02220", &["D♯"], Some(CAPO_FRET6), None),
     Chord::new(&["D+"], "xx0332", &["D augmented"], None, None),
@@ -128,6 +137,8 @@ pub static ALL_CHORDS: &'static [Chord] = &[
     Chord::new(&["F#sus2"], "2441xx", &["F♯ suspended 2ⁿᵈ"], None, None),
     Chord::new(&["Fsus4"], "133311", &["F suspended 4ᵗʰ"], None, Some(BARRE_FRET1)),
     Chord::new(&["F#sus4"], "244422", &["F♯ suspended 4ᵗʰ"], None, Some(BARRE_FRET2)),
+    Chord::new(&["F/A"], "x03211", &["F over A"], None, None),
+    Chord::new(&["F/G"], "303211", &["F over G"], None, None),
     Chord::new(&["G"], "320003", &["G"], None, None),
     Chord::new(&["G#"], "022100", &["G♯"], Some(CAPO_FRET4), None),
     Chord::new(&["G+"], "321003", &["G augmented"], None, None),
@@ -148,6 +159,8 @@ pub static ALL_CHORDS: &'static [Chord] = &[
     Chord::new(&["Gsus4"], "330013", &["G suspended 4ᵗʰ"], None, None),
     Chord::new(&["G#sus4"], "022200", &["G♯ suspended 4ᵗʰ"], Some(CAPO_FRET4), None),
     Chord::new(&["G/B"], "x20033", &["G over B"], None, None),
+    Chord::new(&["G/F"], "1x0033", &["G over F♯"], None, None),
+    Chord::new(&["G/F#"], "220033", &["G over F♯"], None, None),
 ];
 
 pub static ALL_CHORDS_BY_SHORT_NAMES: Lazy<HashMap<String, Vec<&'static Chord<'static>>>> =
